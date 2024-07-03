@@ -153,10 +153,15 @@ class ViewResults:
         # Установка фильтров по зарплате
         from_input = ""
         to_input = ""
-        while not from_input.isdigit() and from_input != '':
+        while not from_input.isdigit():
             from_input = input('Введите минимальную сумму зарплаты. (Оставьте пустое поле для всех.) \n')
-        while not to_input.isdigit() and to_input != '':
+            if from_input == "":
+                break
+
+        while not to_input.isdigit():
             to_input = input('Введите максимальную сумму зарплаты. (Оставьте пустое поле для всех.) \n')
+            if to_input == "":
+                break
         self.salary_from_filter = int(from_input) if from_input else None
         self.salary_to_filter = int(to_input) if to_input else None
 
