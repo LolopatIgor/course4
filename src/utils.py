@@ -1,4 +1,5 @@
 def convert_salary(currency_value, currency_name):
+    # Конвертор к рублям из валют
     if currency_value is None or currency_value is None:
         return None
     if currency_name.upper() == "USD":
